@@ -1,0 +1,21 @@
+@import "tailwindcss";
+/* \
+bg
+| Color         | Hex                               | Where used              |
+| ------------- | --------------------------------- | ----------------------- |
+| Dark Navy     | `#020319`                         | Main section background |
+| Indigo        | `#545BF8`                         | “New” badge             |
+| Indigo Button | `#6366F1` (Tailwind `indigo-500`) | Primary buttons         |
+| Indigo Hover  | `#4338CA` (Tailwind `indigo-700`) | Button hover            |
+| Black Overlay | `rgba(0,0,0,0.7)`                 | Mobile menu background  |
+| White Overlay | `rgba(255,255,255,0.1)`           | Badge background        |
+
+text
+| Color       | Hex       | Tailwind        |
+| ----------- | --------- | --------------- |
+| White       | `#FFFFFF` | text-white      |
+| Light Gray  | `#E2E8F0` | text-slate-200  |
+| Gray        | `#F8FAFC` | text-gray-50    |
+| Indigo Text | `#3730A3` | text-indigo-800 |
+
+*/
