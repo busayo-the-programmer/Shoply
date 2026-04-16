@@ -15,6 +15,7 @@ export const useCreateProduct = () => {
       const res = await axiosInstance.post('/products/create', productData)
       console.log(res)
       setProduct(res.data.product)
+      alert('Product created successfully!')
       navigate('/products')
     } catch (err) {
       setError(err.response?.data?.message || 'Failed to create product')
