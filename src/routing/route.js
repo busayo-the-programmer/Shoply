@@ -3,7 +3,6 @@ import LandingPage from "../pages/landing page";
 import About from "../pages/landing page/About";
 import { Register } from "../pages/auth/register";
 import Login from "../pages/auth/Login";
-import VendorApplication from "../pages/vendor/application-form";
 import Allproducts from "../pages/products/Allproducts";
 import ProductLayout from "../pages/products/Layout";
 import Createproducts from "../pages/products/Createproducts";
@@ -22,6 +21,7 @@ import Vendors from "../pages/admin/Vendors";
 import Users from "../pages/admin/Users";
 import ManageProducts from "../pages/admin/ManageProducts";
 import CheckoutPage from "../pages/products/(cart_wishlist)/Checkout";
+import VendorApplication from "../pages/vendor/Application-form";
 
 
  export const routes = createBrowserRouter([
