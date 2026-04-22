@@ -56,18 +56,21 @@ const Createproducts = () => {
     setImagePreview(isValid ? watchedImage : '')
   }, [watchedImage])
 
-  const onSubmit = async (data) => {
-    // cast numeric strings to numbers before sending
-    const payload = {
-      ...data,
-      price: Number(data.price),
-      originalPrice: data.originalPrice ? Number(data.originalPrice) : undefined,
-      stock: Number(data.stock),
-    }
+const onSubmit = async (data) => {
+  const payload = {
+    ...data,
+    price: Number(data.price),
+    originalPrice: data.originalPrice ? Number(data.originalPrice) : undefined,
+    stock: Number(data.stock),
+  }
+  try {
     await createProduct(payload)
     reset()
     setImagePreview('')
+  } catch {
+    // error is already handled by onError in the hook — nothing needed here
   }
+}
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#F5F7FF] to-[#EEF2FF] px-6 sm:px-10 md:px-24 py-16">

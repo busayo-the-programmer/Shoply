@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useGetProducts } from './hooks/useGetproductsQuery'
+import { Link } from 'react-router-dom'
 
 const ManageProducts = () => {
   const { products, loading, error } = useGetProducts()
@@ -47,9 +48,11 @@ const ManageProducts = () => {
           <h1 className="text-xl font-semibold text-indigo-950">Products</h1>
           <p className="text-sm text-gray-400 mt-0.5">Manage your store inventory and listings</p>
         </div>
+        <Link to='/products/create'>
         <button className="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
           + Add Product
         </button>
+        </Link>
       </div>
 
       {/* Stats */}

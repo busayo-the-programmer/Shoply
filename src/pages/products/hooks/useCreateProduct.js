@@ -1,28 +1,22 @@
-import { useState } from 'react'
 import axiosInstance from '../../../api/instance'
+import { useMutation } from '@tanstack/react-query'
 import { useNavigate } from 'react-router-dom'
 
+const createProductFn = async (productData) => {
+  const res = await axiosInstance.post('/products/create', productData)
+  return res.data.product
+}
+
 export const useCreateProduct = () => {
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
-  const [product, setProduct] = useState(null);
   const navigate = useNavigate()
 
-  async function createProduct(productData) {
-    setLoading(true)
-    setError(null)
-    try {
-      const res = await axiosInstance.post('/products/create', productData)
-      console.log(res)
-      setProduct(res.data.product)
+  const { mutateAsync: createProduct, isPending: loading, error } = useMutation({
+    mutationFn: createProductFn,
+    onSuccess: () => {
       alert('Product created successfully!')
       navigate('/products')
-    } catch (err) {
-      setError(err.response?.data?.message || 'Failed to create product')
-    } finally {
-      setLoading(false)
-    }
-  }
+    },
+  })
 
-  return { createProduct, loading, error, product }
+  return { createProduct, loading, error }
 }
