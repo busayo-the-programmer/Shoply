@@ -47,21 +47,21 @@ const Layout = () => {
             </Link>
             <Link
               to={"/about"}
-              className="px-4 py-2 text-slate-700 hover:text-slate-500"
+              className={`px-4 py-2 ${mobileOpen ? "text-white hover:text-slate-200 " : "text-slate-700 hover:text-slate-500 "}`}
               onClick={() => setMobileOpen(false)}
             >
               About
             </Link>
             <Link
               to={"/products"}
-              className="px-4 py-2 text-slate-700 hover:text-slate-500"
+              className={`px-4 py-2 ${mobileOpen ? "text-white hover:text-slate-200 " : "text-slate-700 hover:text-slate-500 "}`}
               onClick={() => setMobileOpen(false)}
             >
               Products
             </Link>
             <Link
               to={"/testimonials"}
-              className="px-4 py-2 text-slate-700 hover:text-slate-500"
+              className={`px-4 py-2 ${mobileOpen ? "text-white hover:text-slate-200 " : "text-slate-700 hover:text-slate-500 "}`}
               onClick={() => setMobileOpen(false)}
             >
               Testimonial
