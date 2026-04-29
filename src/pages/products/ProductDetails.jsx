@@ -3,6 +3,7 @@ import { useGetSingleProducts } from './hooks/useGetSingleProduct'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useToggleWishlist } from './(cart_wishlist)/wish-hooks.js/useAddWishlist'
 import { useGetWishlist } from './(cart_wishlist)/wish-hooks.js/usegetWishlist'
+import { useAddToCart } from './(cart_wishlist)/cart-hooks/useCartMutations'
 
 const ProductDetails = () => {
   const {id} = useParams()
@@ -13,11 +14,12 @@ const ProductDetails = () => {
   const [addedToCart, setAddedToCart] = useState(false)
  const toggleWishlist = useToggleWishlist()
  const { products: wishlistProducts } = useGetWishlist()
+   const addToCart = useAddToCart()
+ 
 
-  const handleAddToCart = () => {
+  const handleAddToCartUi = () => {
     setAddedToCart(true)
     setTimeout(() => setAddedToCart(false), 2000)
-    // wire up your cart logic here
   }
 
   // ── Loading ──
@@ -231,7 +233,12 @@ const ProductDetails = () => {
 
               {/* Add to cart */}
               <button
-                onClick={handleAddToCart}
+                 onClick={() =>
+    addToCart.mutate({
+      id: product._id,
+      quantity: 1
+    }), handleAddToCartUi()
+  }
                 disabled={!inStock}
                 className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-full text-sm font-semibold transition shadow-md
                   ${addedToCart

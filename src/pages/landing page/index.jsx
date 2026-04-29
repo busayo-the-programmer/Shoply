@@ -20,7 +20,7 @@ const LandingPage = () => {
       </h1>
 
       <p className="text-gray-500 text-sm md:text-base text-center max-w-[470px] mt-3 leading-relaxed">
-We bridge the gap between thousands of independent, passionate creators and millions of conscious shoppers, creating a seamless and secure shopping experience designed to help you discover exactly what you’ve been looking for.
+We bridge the gap between thousands of independent vendors, and millions of conscious shoppers, creating a seamless and secure shopping experience, discover exactly what you’ve been looking for.
       </p>
 
       <div className="flex items-center gap-3 mt-8 text-sm">
