@@ -20,7 +20,7 @@ const LandingPage = () => {
       </h1>
 
       <p className="text-gray-500 text-sm md:text-base text-center max-w-[470px] mt-3 leading-relaxed">
-        A modern AI platform to generate content, automate workflows and accelerate decision-making for modern teams.
+We bridge the gap between thousands of independent, passionate creators and millions of conscious shoppers, creating a seamless and secure shopping experience designed to help you discover exactly what you’ve been looking for.
       </p>
 
       <div className="flex items-center gap-3 mt-8 text-sm">
