@@ -2,7 +2,9 @@ import React from 'react'
 import { useState } from "react";
 import BecomeAVendor from './become';
 import { Link } from 'react-router-dom';
+import { useGetCurrentUser } from './useGetCurrentUser';
 const LandingPage = () => {
+  const {currentUser} =useGetCurrentUser()
   return (
     <>
       <section className="w-full flex flex-col items-center max-md:px-2 bg-gradient-to-b from-[#F5F7FF] via-[#fffbee] to-[#E6EFFF] pb-20 min-h-screen">
@@ -22,11 +24,15 @@ const LandingPage = () => {
       </p>
 
       <div className="flex items-center gap-3 mt-8 text-sm">
-       <Link to= "/auth/register">
+       {currentUser ? <Link to= "/vendor/apply">
+        <button className="bg-indigo-600 hover:bg-indigo-700 text-white text-sm px-6 py-3 rounded-full transition cursor-pointer shadow-md">
+          Apply as vendor
+        </button>
+       </Link> : <Link to= "/auth/register">
         <button className="bg-indigo-600 hover:bg-indigo-700 text-white text-sm px-6 py-3 rounded-full transition cursor-pointer shadow-md">
           Get started for free
         </button>
-       </Link>
+       </Link>}
        <Link to= "/products">
         <button className="text-indigo-600 bg-indigo-100 hover:bg-indigo-200 text-sm px-5 py-3 rounded-full transition cursor-pointer font-medium">
           Check out amaizing products
